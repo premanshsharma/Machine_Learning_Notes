@@ -9,6 +9,7 @@
   - Accuracy, Precision, Recall, F1-Score
   - ROC-AUC
 - Clustering Metrics
+  - Davies-Bouldin Index
   - Silhouette Score
 # Regression Metrics
 ## R² (Coefficient of determination)
@@ -119,6 +120,19 @@ F1=\frac{2pr}{p+r}
   - A higher AUC value indicates a better model. The ROC-AUC metric is particularly useful for evaluating models in imbalanced datasets, as it considers both false positives and false negatives across all thresholds
 
 # Clustering Metrics
+## Davies-Bouldin Index
+- **Definition:- **The Davies-Bouldin Index (DBI) is a metric for evaluating clustering algorithms. It considers both the intra-cluster distances and the inter-cluster distances to assess how well-separated and compact the clusters are.
+- **Formula**
+```math
+DBI=\frac{1}{k}\sum_{i=1}^k max(i!=j)\frac{si+sj}{dij}
+```
+- Where:
+  - k is the number of clusters.
+  - si  is the average distance of points in cluster i to the centroid of cluster i (intra-cluster distance).
+  - dij is the distance between the centroids of clusters i and j (inter-cluster distance).
+- The lower the Davies-Bouldin Index, the better the clustering solution, as it indicates that clusters are compact and well-separated.
+- A DBI of 0 would indicate perfect clustering; however, this is rarely achieved in practical applications.
+- Generally, a lower DBI suggests better-defined clusters, while a higher DBI suggests more overlap between clusters.
 ## Silhouette Score
 - **Definition:-** The Silhouette Score is a metric used to evaluate the quality of a clustering solution. It measures how similar an object is to its cluster compared to other clusters. The score provides insight into the appropriateness of the number of clusters chosen.
 - **Formula**
@@ -126,8 +140,8 @@ F1=\frac{2pr}{p+r}
 s(i)=\frac{b(i)-a(i)}{max(a(i), b(i))}
 ```
 - where
-- a(i) is the average distance between point i and all other points in the same cluster (intra-cluster distance).
-- b(i) is the average distance between point i and all points in the nearest cluster (nearest-cluster distance).
+- b(i) is the average distance between point i and all other points in the same cluster (intra-cluster distance).
+- a(i) is the average distance between point i and all points in the nearest cluster (nearest-cluster distance).
 - **Interpretation**
   - The Silhouette Score ranges from -1 to 1:
     - 1: The point is well-clustered, as it is closer to points in its cluster than to points in the nearest cluster.
