@@ -70,6 +70,7 @@ MAE =  \frac{1}{n}\sum |y_i-y'_i|
 # Classification
 ## Confusion Matrix
 - **Definition:-** A confusion matrix is a table used to evaluate the performance of a classification model. It provides a visual representation of the model's predictions compared to the actual outcomes.
+
 | Actual\Prediction | Positive      | Negative      |
 |-------------------|---------------|---------------|
 |Positive           | True Positive | False Negative|
