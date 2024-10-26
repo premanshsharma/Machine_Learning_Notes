@@ -122,7 +122,7 @@ F1=\frac{2pr}{p+r}
 - **Definition:-** The Silhouette Score is a metric used to evaluate the quality of a clustering solution. It measures how similar an object is to its cluster compared to other clusters. The score provides insight into the appropriateness of the number of clusters chosen.
 - **Formula**
 ```math
-s(i)=frac{b(i)-a(i)}{max(a(i), b(i))}
+s(i)=\frac{b(i)-a(i)}{max(a(i), b(i))}
 ```
 - where
 - a(i) is the average distance between point i and all other points in the same cluster (intra-cluster distance).
