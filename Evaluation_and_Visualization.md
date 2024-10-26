@@ -15,9 +15,9 @@
 ## R² (Coefficient of determination)
 **Formula**
 ```math
-R² = 1 - \frac{Sum of Residual(SS_(res))}{SS_total}
+R² = 1 - \frac{Sum of Residual(SS_r)}{SS_t}
 
-R² = \frac{\sum (y_i-y'_i)^2}{\sum (y_i-y'_mean)^2}
+R² = \frac{\sum (y_i-y'_i)^2}{\sum (y_i-y-mean)^2}
 ```
 ## Advantages and Disadvantages
 | Metric                 | Advantages                                          | Disadvantages                                      |
