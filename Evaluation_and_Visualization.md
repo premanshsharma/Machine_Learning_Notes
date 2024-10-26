@@ -14,8 +14,13 @@
 # Regression Metrics
 ## R² (Coefficient of determination)
 **Formula**
-R² = 1 - $\frac{SS<sub>res</sub>}{SS<sub>tot</sub>}$
-
+```math
+R² = 1 - \frac{Sum of Residual(S<sub>res</sub>)}{S<sub>total</sub>}
+```
+R² = 1 - Sum of Residual(S<sub>res</sub>)
+          ____________________
+          S<sub>total</sub>
+   = 
 ## Advantages and Disadvantages
 | Metric                 | Advantages                                          | Disadvantages                                      |
 |-----------------------|----------------------------------------------------|---------------------------------------------------|
