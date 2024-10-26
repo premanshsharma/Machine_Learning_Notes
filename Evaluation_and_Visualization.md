@@ -1,0 +1,14 @@
+# Mind Map
+- Evaluation and Visualization
+  - Regression Metrics
+    - R², Adjusted R²
+    - Mean Squared Error (MSE)
+    - Mean Absolute Error (MAE)
+    - Bias vs. Variance
+  - Classification Metrics
+    - Confusion Matrix
+    - Accuracy, Precision, Recall, F1-Score
+    - ROC-AUC
+  - Clustering Metrics
+    - Silhouette Score
+    - Davies-Bouldin Index
