@@ -15,7 +15,7 @@
 ## R² (Coefficient of determination)
 **Formula**
 ```math
-R² = 1 - \frac{Sum of Residual(SS_res)}{SS_total}
+R² = 1 - \frac{Sum of Residual(SS_(res))}{SS_total}
 
 R² = \frac{\sum (y_i-y'_i)^2}{\sum (y_i-y'_mean)^2}
 ```
