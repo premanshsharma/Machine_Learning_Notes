@@ -1,1 +1,29 @@
-
+# Mind Map
+- Text Preprocessing
+  - Tokenization
+  - Stop Words Removal
+  - Text Normalization (lowercasing, removing punctuations,, special characters)
+  - Lemmatization/Stemming
+- Sequence Labeling
+  - 
+- Language Modeling
+  - Predict the next word/token
+  - Applications: Text generation, autocomplete
+- Tasks
+  - POS Tagging
+  - Named Entity Recognition (NER)
+  - Text Generation
+  - Text classification
+  - Text Summarization - Abstractive vs Extractive Summarization
+  - Question Answering - Answering based on given text
+  - Coreference Resolution - Link pronouns to entities
+  - Speech to text (ASR) - converting spoken words into text
+  - Text to speech (TTS) - converting text into spoken words
+  - Dialogue System - Chatbots, Virtual Assistants
+- Word Representation/Embeddings
+  - Bag of Words (BOW)
+  - Term Frequency-Inverse Document Frequency (TF-IDF)
+  - N-grams
+  - Deep Learning Based
+    - Word2Vec
+    - GloVe (Global Vectors)
