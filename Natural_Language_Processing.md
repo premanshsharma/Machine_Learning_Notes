@@ -87,7 +87,7 @@ TF-IDF(w, d) = TF(w, d) * IDF(w)
     - IDF: If "cat" appears in only one of the two documents, IDF=log(2/1)=log(2)
     - TF-IDF for "cat" would be 1/6×log(2).
 ### 1.1.4 Label Encoding
-- Label Encoding is a technique to convert categorical data (data that can be divided into discrete categories) into numerical values. Each unique category or label in the data is assigned a unique integer. It is a simple method that is often used for converting labels (e.g., words or categories) into numerical form so that machine learning algorithms, which generally operate on numerical data, can process them.
+- Label Encoding is a technique to convert categorical data (data that can be divided into discrete categories) into numerical values. Each unique category or label in the data is assigned a unique integer. It is a simple method often used for converting labels (e.g., words or categories) into numerical form so that machine learning algorithms, which generally operate on numerical data, can process them.
 - Label Encoding assigns a distinct integer to each category given a set of categories. The assignment is typically arbitrary, meaning it doesn't represent any inherent relationship between the categories.
 - Example
   - apple = 0, banana = 1, cherry = 2
@@ -96,7 +96,7 @@ TF-IDF(w, d) = TF(w, d) * IDF(w)
 - For a given word it returns a vector such that these vectors are semantically similar to the similar words.
 - **Target Word** The word for which we want to predict the surrounding context words.
 - **Context Word** The words surrounding the target word within a defined window size.
-- The context words are very useful in understanding the target words and vice-versa.
+- Contextual words are very useful in understanding the target words and vice versa.
 - **Comparison between CBOW & skip-gram:**
   1. CBOW is comparatively faster to train than skip-gram (as CBOW has to train only one softmax).
   2. CBOW is better for frequently occurring words (because if a word occurs more often it will have more training words to train).
@@ -156,8 +156,47 @@ TF-IDF(w, d) = TF(w, d) * IDF(w)
   - where P(wi|wi-n+1,..........,wi-1) is the joint probability of the word sequence
   - wi represents the ith word in the sequence
   - n is the size of the n-gram
-
-
+- **Estimating n-Gram Probabilities**
+  - To estimate the probabilities P(wi|wi-n+1,..........,wi-1), we can use frequency counts:
+    ```math
+    P(wi|wi-n+1,..........,wi-1) = \frac{C(wi-n+1,..........,wi-1,wi)}{C(wi-n+1,........,wi-1)}
+    ```
+  - C(A) denotes the count of occurrences of the sequence A.
+  - To address the problem of zero probabilities for unseen n-grams, various smoothing techniques can be applied:
+  ```math
+    P(wi|wi-n+1,..........,wi-1) = \frac{C(wi-n+1,..........,wi-1,wi)+1}{C(wi-n+1,........,wi-1)+V}
+    ```
+- Generating Word Embeddings Using n-grams
+  - Vectorization: Once n-grams are identified and counted, they can be vectorized using techniques such as:
+    - Count Vectorization: Directly representing n-grams as feature vectors based on their counts in the text.
+    - TF-IDF Vectorization: Using term frequency-inverse document frequency (TF-IDF) to weigh n-grams, thus emphasizing more informative n-grams while down-weighting common ones.
+  - Embedding Space: After vectorization, these feature vectors can be fed into embedding models or neural networks (like CNNs or RNNs) to learn dense representations. This allows for more complex relationships between n-grams and their contexts to be learned.
+- Types of n-Gram Models
+  - Language Modeling: Predicting the next word in a sequence based on the previous n−1 words. Used in applications like predictive text input and speech recognition.
+  - Text Classification: Utilizing n-grams as features in classification algorithms, where the presence or frequency of n-grams can help classify documents or sentiments.
+  - Machine Translation: The sequence of words helps translate phrases while preserving context.
+- Challenges with n-Grams
+  - Sparsity: As n increases, the number of possible n-grams grows exponentially, leading to sparsity in data.
+  - Memory Usage: Storing n-grams, especially for higher values of n, can consume significant memory.
+  - Context Limitation: The Markov assumption limits the model to only consider a fixed context window.
+- Basic Example
+  - Example: Bigram Model
+    - Consider the following sentence:
+      - "The cat sat on the mat."
+    - Tokenization: We split the sentence into words:
+      - Words=[The, cat, sat, on, the, mat]
+    - Generate Bigrams: We can form bigrams by taking pairs of consecutive words:
+      - Bigrams=[(The, cat),(cat, sat),(sat, on),(on, the),(the, mat)]
+    - Count Bigrams: Let's count occurrences in a larger corpus:
+      - C(The, cat)=2
+      - C(cat, sat)=3
+      - C(sat, on)=1
+      - C(on, the)=4
+      - C(the, mat)=1
+    - Calculate Probabilities: For example, the probability of "cat" given "The" is calculated as:
+```math
+P(cat|The) = \frac{C(The, cat)}{C(The) = frac{2}{5} = 0.4}
+```
 ---------------------------------------
 
 - It is a neural network architecture
