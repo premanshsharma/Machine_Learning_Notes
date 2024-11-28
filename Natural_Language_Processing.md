@@ -1,3 +1,18 @@
+# Natural Language Processing (NLP)
+- NLP is the interaction between computers and human languages, enabling machines to understand, interpret and produce human text and speech. 
+
+- Corpus:- textual dataset
+- Tokenization:- breaking longer text into words(tokens)
+- Stop words:- words like is, am, are, and. These words don't have that much meaning.
+- Morphology:- deals with the structure and formation of words. looks at individual words. Ex:- Words prefixes, suffixes, root forms, infixes.
+  - Used in stemming an lemmatization.
+  - Morphemes are un- and happi- in unhappy
+- Syntax:- arrangement of words in the sentence. Considers sentences and the relationships between words. Ex:- subject, verb and object in a sentence.
+- POS Tagging:- 
+
+
+
+
 # Mind Map
 - Text Preprocessing
   - Tokenization
